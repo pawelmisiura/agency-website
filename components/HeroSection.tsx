@@ -65,7 +65,22 @@ const HeroSection = () => {
         <div key={index} className="blob-element" style={style}></div>
       ))}
       <NavBar />
-      {/* Add other hero content here */}
+      <div className="flex flex-col items-center justify-center h-screen space-y-6 max-w-4xl mx-auto text-center">
+        <h1 className="text-7xl font-bold font-poppins">
+          Building AI Web Apps for the Future
+        </h1>
+        <h2 className="text-md font-bold">
+          Implementing AI solutions to help you grow your business.
+        </h2>
+        <div className="flex flex-row gap-4">
+          <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
+            Get Started
+          </button>
+          <button className="bg-white text-black px-4 py-2 rounded-md">
+            Learn More
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
