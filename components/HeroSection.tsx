@@ -70,13 +70,19 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div className="hero-background">
+    <div className="hero-background relative min-h-screen">
       {/* Render multiple blob elements */}
       {blobStyles.map((style, index) => (
         <div key={index} className="blob-element" style={style}></div>
       ))}
-      <NavBar />
-      <div className="flex flex-col items-center justify-center h-screen space-y-6 max-w-4xl mx-auto text-center">
+
+      {/* Absolutely positioned NavBar */}
+      <div className="absolute top-0 left-0 right-0 z-10">
+        <NavBar />
+      </div>
+
+      {/* Hero Content - Centered with Padding */}
+      <div className="relative z-0 flex flex-col items-center justify-center h-screen space-y-6 max-w-4xl mx-auto text-center pt-16">
         <h1 className="text-7xl font-bold font-poppins">
           We Build AI Web Apps
         </h1>
