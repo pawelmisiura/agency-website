@@ -62,3 +62,29 @@ body {
     transform: translate(-50%, -50%) scale(1.4) rotate(1turn);
   }
 }
+
+/* New Blob Animation Styles */
+
+.hero-background {
+  position: relative; /* Needed for absolute positioning of the pseudo-element */
+  overflow: hidden; /* Prevent blob from overflowing */
+  min-height: 100vh; /* Ensure it covers the viewport height */
+  z-index: 0; /* Ensure content is above the blob */
+}
+
+/* Styles for the JS-controlled blob */
+.blob-element {
+  content: "";
+  position: absolute;
+  width: 25vw; /* Further decreased size */
+  height: 25vw; /* Further decreased size */
+  background-color: #83bdf5;
+  filter: blur(50px); /* Adjusted blur */
+  opacity: 0.75; /* Adjusted opacity for blend mode */
+  z-index: -1;
+  /* Smooth transitions for position, size, and shape changes */
+  transition: top 15s ease-in-out, left 15s ease-in-out,
+    transform 15s ease-in-out, border-radius 15s ease-in-out; /* Added border-radius transition */
+  /* Added border-radius to will-change */
+  will-change: top, left, transform, border-radius;
+}

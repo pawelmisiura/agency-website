@@ -13,7 +13,8 @@ const NavBar = () => {
     "group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-[#84BDF5] group-hover:text-transparent group-hover:bg-clip-text";
 
   return (
-    <div className="flex flex-row justify-between items-center max-w-7xl mx-auto py-4">
+    <div className="relative flex flex-row justify-between items-center max-w-7xl mx-auto py-4">
+      {/* Logo */}
       <div className="relative h-8 overflow-hidden group">
         <h1 className="text-2xl font-extrabold transition-transform duration-600 group-hover:-translate-y-full">
           Black Pearl Studios
@@ -22,26 +23,32 @@ const NavBar = () => {
           Black Pearl Studios
         </h1>
       </div>
-      <div className="border border-gray-800 rounded-lg p-1 flex flex-row font-medium">
-        <Link
-          href="/"
-          className={`${containerBaseStyles} ${containerHoverStyles} text-gray-400`}
-        >
-          <span className={textHoverGradientStyles}>home</span>
-        </Link>
-        <Link
-          href="/about"
-          className={`${containerBaseStyles} ${containerHoverStyles} text-gray-400`}
-        >
-          <span className={textHoverGradientStyles}>about</span>
-        </Link>
-        <Link
-          href="/contact"
-          className={`${containerBaseStyles} ${containerHoverStyles} text-gray-400`}
-        >
-          <span className={textHoverGradientStyles}>contact</span>
-        </Link>
+
+      {/* Absolutely Centered Navigation Links */}
+      <div className="absolute inset-x-0 top-1/2 transform -translate-y-1/2 flex justify-center pointer-events-none">
+        <div className="border bg-black border-gray-800 rounded-lg p-1 flex flex-row font-medium pointer-events-auto">
+          <Link
+            href="/"
+            className={`${containerBaseStyles} ${containerHoverStyles} text-gray-400`}
+          >
+            <span className={textHoverGradientStyles}>home</span>
+          </Link>
+          <Link
+            href="/about"
+            className={`${containerBaseStyles} ${containerHoverStyles} text-gray-400`}
+          >
+            <span className={textHoverGradientStyles}>about</span>
+          </Link>
+          <Link
+            href="/contact"
+            className={`${containerBaseStyles} ${containerHoverStyles} text-gray-400`}
+          >
+            <span className={textHoverGradientStyles}>contact</span>
+          </Link>
+        </div>
       </div>
+
+      {/* Let's Talk Button */}
       <div
         className={`flex flex-row gap-4 relative overflow-hidden p-1 rounded-lg animated-border-base hover:border-[#84BDF5]/75 hover:shadow-[0_0_10px_#84BDF5] transition-all duration-300`}
       >
