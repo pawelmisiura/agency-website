@@ -24,3 +24,41 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.animated-border-base {
+  --offset: 1px;
+  border-radius: 0.5rem;
+  border: 1px solid #1e2939;
+}
+
+.animated-border-base::before {
+  content: "";
+  background: conic-gradient(transparent 270deg, #84bdf5, transparent);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  aspect-ratio: 1;
+  width: 100%;
+  animation: rotate 3s linear infinite;
+  z-index: -2;
+}
+
+.animated-border-base::after {
+  content: "";
+  background: var(--background);
+  border-radius: inherit;
+  position: absolute;
+  inset: var(--offset);
+  z-index: -1;
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) scale(1.4) rotate(0turn);
+  }
+
+  to {
+    transform: translate(-50%, -50%) scale(1.4) rotate(1turn);
+  }
+}
