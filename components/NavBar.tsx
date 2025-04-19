@@ -1,16 +1,17 @@
 import React from "react";
 import Link from "next/link";
 
+export const containerBaseStyles =
+  "text-sm px-4 py-2 rounded-lg border border-transparent transition-all duration-300 group";
+export const containerHoverStyles =
+  "hover:border-[#84BDF5]/75 hover:shadow-[0_0_10px_#84BDF5]";
+
+// Styles for the inner text span gradient on hover
+export const textHoverGradientStyles =
+  "group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-[#84BDF5] group-hover:text-transparent group-hover:bg-clip-text";
+
 const NavBar = () => {
   // Styles for the container (Link/button)
-  const containerBaseStyles =
-    "text-sm px-4 py-2 rounded-lg border border-transparent transition-all duration-300 group";
-  const containerHoverStyles =
-    "hover:border-[#84BDF5]/75 hover:shadow-[0_0_10px_#84BDF5]";
-
-  // Styles for the inner text span gradient on hover
-  const textHoverGradientStyles =
-    "group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-[#84BDF5] group-hover:text-transparent group-hover:bg-clip-text";
 
   return (
     <div className="relative flex flex-row justify-between items-center max-w-7xl mx-auto py-4">

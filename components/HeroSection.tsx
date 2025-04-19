@@ -1,7 +1,12 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import NavBar from "./NavBar";
+import NavBar, {
+  containerBaseStyles,
+  containerHoverStyles,
+  textHoverGradientStyles,
+} from "./NavBar";
+import Link from "next/link";
 
 // Helper function to generate random border-radius
 const getRandomBorderRadius = () => {
@@ -10,6 +15,12 @@ const getRandomBorderRadius = () => {
     100 - p()
   }% ${100 - p()}%`;
 };
+
+const activeHoverStyles =
+  "border-[#84BDF5]/75 shadow-[0_0_10px_#84BDF5] border-transparent transition-all duration-300";
+
+const activeTextHoverGradientStyles =
+  "bg-gradient-to-r from-white to-[#84BDF5] text-transparent bg-clip-text";
 
 const NUM_BLOBS = 4;
 
@@ -67,18 +78,27 @@ const HeroSection = () => {
       <NavBar />
       <div className="flex flex-col items-center justify-center h-screen space-y-6 max-w-4xl mx-auto text-center">
         <h1 className="text-7xl font-bold font-poppins">
-          Building AI Web Apps for the Future
+          We Build AI Web Apps
         </h1>
-        <h2 className="text-md font-bold">
+        <h2 className="text-md">
           Implementing AI solutions to help you grow your business.
         </h2>
-        <div className="flex flex-row gap-4">
-          <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
-            Get Started
-          </button>
-          <button className="bg-white text-black px-4 py-2 rounded-md">
-            Learn More
-          </button>
+        <div className="border bg-black border-gray-800 rounded-lg p-1 flex flex-row font-medium pointer-events-auto">
+          <Link
+            href="/contact"
+            className={`${containerBaseStyles} ${containerHoverStyles} text-gray-400`}
+          >
+            <span className={textHoverGradientStyles}>Our Work</span>
+          </Link>
+          <Link
+            href="/contact"
+            className={`${containerBaseStyles} ${activeHoverStyles} text-gray-400 flex items-center gap-2`}
+          >
+            <span className={activeTextHoverGradientStyles}>let's talk</span>
+            <div className="flex items-center gap-1.5">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            </div>
+          </Link>
         </div>
       </div>
     </div>
