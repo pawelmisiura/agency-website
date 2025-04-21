@@ -33,7 +33,7 @@ body {
 
 .animated-border-base::before {
   content: "";
-  background: conic-gradient(transparent 270deg, #84bdf5, transparent);
+  background: conic-gradient(transparent 270deg, #83bbf4, transparent);
   position: absolute;
   top: 50%;
   left: 50%;

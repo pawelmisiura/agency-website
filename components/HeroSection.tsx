@@ -17,10 +17,10 @@ const getRandomBorderRadius = () => {
 };
 
 const activeHoverStyles =
-  "border-[#84BDF5]/75 shadow-[0_0_10px_#84BDF5] border-transparent transition-all duration-300";
+  "border-[#83BBF4]/75 shadow-[0_0_10px_#83BBF4] border-transparent transition-all duration-300";
 
 const activeTextHoverGradientStyles =
-  "bg-gradient-to-r from-white to-[#84BDF5] text-transparent bg-clip-text";
+  "bg-gradient-to-r from-white to-[#83BBF4] text-transparent bg-clip-text";
 
 const NUM_BLOBS = 4;
 
@@ -72,9 +72,9 @@ const HeroSection = () => {
   return (
     <div className="hero-background relative min-h-screen">
       {/* Render multiple blob elements */}
-      {blobStyles.map((style, index) => (
+      {/* {blobStyles.map((style, index) => (
         <div key={index} className="blob-element" style={style}></div>
-      ))}
+      ))} */}
 
       {/* Absolutely positioned NavBar */}
       <div className="absolute top-0 left-0 right-0 z-10">
@@ -83,18 +83,20 @@ const HeroSection = () => {
 
       {/* Hero Content - Centered with Padding */}
       <div className="relative z-0 flex flex-col items-center justify-center h-screen space-y-6 max-w-4xl mx-auto text-center pt-16">
-        <h1 className="text-7xl font-bold font-poppins">
-          We Build AI Web Apps
+        <h1
+          className={`text-9xl  font-poppins ${activeTextHoverGradientStyles}`}
+        >
+          We Build Web Apps
         </h1>
         <h2 className="text-md">
-          Implementing AI solutions to help you grow your business.
+          We build web applications that help your business grow.
         </h2>
         <div className="border bg-black border-gray-800 rounded-lg p-1 flex flex-row font-medium pointer-events-auto">
           <Link
             href="/contact"
             className={`${containerBaseStyles} ${containerHoverStyles} text-gray-400`}
           >
-            <span className={textHoverGradientStyles}>Our Work</span>
+            <span className={textHoverGradientStyles}>our work</span>
           </Link>
           <Link
             href="/contact"

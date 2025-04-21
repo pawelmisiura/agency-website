@@ -4,11 +4,11 @@ import Link from "next/link";
 export const containerBaseStyles =
   "text-sm px-4 py-2 rounded-lg border border-transparent transition-all duration-300 group";
 export const containerHoverStyles =
-  "hover:border-[#84BDF5]/75 hover:shadow-[0_0_10px_#84BDF5]";
+  "hover:border-[#83BBF4]/75 hover:shadow-[0_0_10px_#83BBF4]";
 
 // Styles for the inner text span gradient on hover
 export const textHoverGradientStyles =
-  "group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-[#84BDF5] group-hover:text-transparent group-hover:bg-clip-text";
+  "group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-[#83BBF4] group-hover:text-transparent group-hover:bg-clip-text";
 
 const NavBar = () => {
   // Styles for the container (Link/button)
@@ -17,10 +17,10 @@ const NavBar = () => {
     <div className="relative flex flex-row justify-between items-center max-w-7xl mx-auto py-4">
       {/* Logo */}
       <div className="relative h-8 overflow-hidden group">
-        <h1 className="text-2xl font-extrabold transition-transform duration-600 group-hover:-translate-y-full">
+        <h1 className="text-2xl transition-transform duration-600 group-hover:-translate-y-full">
           Black Pearl Studios
         </h1>
-        <h1 className="text-2xl font-extrabold absolute top-0 left-0 transition-transform duration-600 group-hover:translate-y-0 translate-y-full">
+        <h1 className="text-2xl absolute top-0 left-0 transition-transform duration-600 group-hover:translate-y-0 translate-y-full">
           Black Pearl Studios
         </h1>
       </div>
@@ -51,7 +51,7 @@ const NavBar = () => {
 
       {/* Let's Talk Button */}
       <div
-        className={`flex flex-row gap-4 relative overflow-hidden p-1 rounded-lg animated-border-base hover:border-[#84BDF5]/75 hover:shadow-[0_0_10px_#84BDF5] transition-all duration-300`}
+        className={`flex flex-row gap-4 relative overflow-hidden p-1 rounded-lg animated-border-base hover:border-[#83BBF4]/75 hover:shadow-[0_0_10px_#83BBF4] transition-all duration-300`}
       >
         <Link
           href="/contact"
