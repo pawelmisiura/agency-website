@@ -106,11 +106,14 @@ body {
 .card-border-base::before {
   content: "";
   background: conic-gradient(
-    #83bbf4,
+    #83bbf4 0deg 18deg,
     transparent,
     transparent,
     transparent,
-    #83bbf4
+    transparent,
+    transparent,
+    transparent,
+    #83bbf4 342deg 360deg
   );
   position: absolute;
   top: 50%;
