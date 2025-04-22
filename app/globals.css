@@ -72,6 +72,16 @@ body {
   z-index: 0; /* Ensure content is above the blob */
 }
 
+/* Add fade-to-black overlay at the bottom */
+.hero-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 70%, #0a0a0a 100%);
+  z-index: 0; /* Place it above blobs (-1), below content (1) */
+  pointer-events: none; /* Allow interaction with content below */
+}
+
 /* Styles for the JS-controlled blob */
 .blob-element {
   content: "";

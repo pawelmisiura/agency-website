@@ -22,7 +22,7 @@ const activeHoverStyles =
 const activeTextHoverGradientStyles =
   "bg-gradient-to-r from-white to-[#83BBF4] text-transparent bg-clip-text";
 
-const NUM_BLOBS = 4;
+const NUM_BLOBS = 2;
 
 // Removed generateInitialBlobStyle function
 
@@ -82,7 +82,7 @@ const HeroSection = () => {
       </div>
 
       {/* Hero Content - Centered with Padding */}
-      <div className="relative z-0 flex flex-col items-center justify-center h-screen space-y-6 max-w-4xl mx-auto text-center pt-16">
+      <div className="relative z-10 flex flex-col items-center justify-center h-screen space-y-6 max-w-4xl mx-auto text-center pt-16">
         <h1
           className={`text-9xl font-poppins ${activeTextHoverGradientStyles}`}
         >
