@@ -1,4 +1,5 @@
 import React from "react";
+import CustomCard from "./ui/CustomCard";
 import ProcessCard from "./ui/ProcessCard";
 
 const activeTextHoverGradientStyles =
@@ -12,22 +13,19 @@ const Process = () => {
       </h2>
       <div className="grid grid-cols-3 gap-8">
         <ProcessCard
-          tags={["Web Application"]}
-          title="Web Application"
-          subtitle="This is a description of the project. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
-          description="This is a description of the project. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+          step="01"
+          title="Strategy Blueprint"
+          description="We build web applications that help your business grow."
         />
         <ProcessCard
-          tags={["Web Application"]}
-          title="Web Application"
-          subtitle="This is a description of the project. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
-          description="This is a description of the project. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+          step="02"
+          title="Design & Development"
+          description="We build web applications that help your business grow."
         />
         <ProcessCard
-          tags={["Web Application"]}
-          title="Web Application"
-          subtitle="This is a description of the project. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
-          description="This is a description of the project. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+          step="03"
+          title="Testing & Deployment"
+          description="We build web applications that help your business grow."
         />
       </div>
     </div>
