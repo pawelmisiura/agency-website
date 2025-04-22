@@ -18,16 +18,16 @@ const NavBar = () => {
       {/* Logo */}
       <div className="relative h-8 overflow-hidden group">
         <h1 className="text-2xl transition-transform duration-600 group-hover:-translate-y-full">
-          Black Pearl Studios
+          {"<"}Black Pearl Labs{">"}
         </h1>
         <h1 className="text-2xl absolute top-0 left-0 transition-transform duration-600 group-hover:translate-y-0 translate-y-full">
-          Black Pearl Studios
+          {"<"}Black Pearl Labs{">"}
         </h1>
       </div>
 
       {/* Absolutely Centered Navigation Links */}
       <div className="absolute inset-x-0 top-1/2 transform -translate-y-1/2 flex justify-center pointer-events-none">
-        <div className="border bg-black border-gray-800 rounded-lg p-1 flex flex-row font-medium pointer-events-auto">
+        <div className="border bg-[#0f0f0f] border-gray-800 rounded-lg p-1 flex flex-row font-medium pointer-events-auto">
           <Link
             href="/"
             className={`${containerBaseStyles} ${containerHoverStyles} text-gray-400`}
@@ -38,7 +38,13 @@ const NavBar = () => {
             href="/about"
             className={`${containerBaseStyles} ${containerHoverStyles} text-gray-400`}
           >
-            <span className={textHoverGradientStyles}>about</span>
+            <span className={textHoverGradientStyles}>projects</span>
+          </Link>
+          <Link
+            href="/contact"
+            className={`${containerBaseStyles} ${containerHoverStyles} text-gray-400`}
+          >
+            <span className={textHoverGradientStyles}>process</span>
           </Link>
           <Link
             href="/contact"

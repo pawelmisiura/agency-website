@@ -2,7 +2,11 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
-import { containerBaseStyles, textHoverGradientStyles } from "./NavBar";
+import {
+  containerBaseStyles,
+  containerHoverStyles,
+  textHoverGradientStyles,
+} from "./NavBar";
 
 // Style for the restored heading
 const activeTextHoverGradientStyles =
@@ -68,7 +72,7 @@ const LetsTalk = () => {
   // Tailwind classes for styling
   const labelStyles = "block text-sm font-medium mb-1 text-gray-300";
   const inputBaseStyles =
-    "block w-full bg-gray-900 border border-gray-700 rounded-md shadow-sm placeholder-gray-500 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-white";
+    "block w-full bg-[#0f0f0f] border border-gray-700 rounded-md shadow-sm placeholder-gray-500 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-white";
   const inputStyles = `${inputBaseStyles} px-3 py-2`;
   const textAreaStyles = `${inputBaseStyles} px-3 py-2 min-h-[120px]`;
   const buttonStyles = `inline-flex justify-center py-2 px-6 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-60 disabled:cursor-not-allowed`;
@@ -165,7 +169,7 @@ const LetsTalk = () => {
           <div className="flex justify-end">
             <button
               type="submit"
-              className={buttonStyles}
+              className={`cursor-pointer text-sm px-4 py-2 rounded-lg border border-gray-700 transition-all duration-300 group ${containerHoverStyles} text-gray-400`}
               disabled={isSubmitting}
             >
               {isSubmitting ? "Sending..." : "Send Message"}
