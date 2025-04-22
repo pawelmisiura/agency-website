@@ -88,3 +88,45 @@ body {
   /* Added border-radius to will-change */
   will-change: top, left, transform, border-radius;
 }
+
+.card-border-base {
+  --offset: 1px;
+  border-radius: 0.5rem;
+  border: 1px solid #1e2939;
+  position: relative; /* Ensure positioning context for pseudo-elements */
+  /* Add inner glow from top */
+  background-image: radial-gradient(
+    ellipse at top,
+    #83bbf422 0%,
+    transparent 60%
+  );
+  background-repeat: no-repeat; /* Prevent gradient tiling */
+}
+
+.card-border-base::before {
+  content: "";
+  background: conic-gradient(
+    #83bbf4,
+    transparent,
+    transparent,
+    transparent,
+    #83bbf4
+  );
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  aspect-ratio: 1;
+  width: 100%;
+  /* animation: rotate 3s linear infinite; */
+  z-index: -2;
+}
+
+.card-border-base::after {
+  content: "";
+  background: var(--background);
+  border-radius: inherit;
+  position: absolute;
+  inset: var(--offset);
+  z-index: -1;
+}

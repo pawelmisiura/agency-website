@@ -1,10 +1,11 @@
 import HeroSection from "@/components/HeroSection";
-import NavBar from "@/components/NavBar";
+import Services from "@/components/Services";
 
 export default function Home() {
   return (
     <div className="">
       <HeroSection />
+      <Services />
     </div>
   );
 }

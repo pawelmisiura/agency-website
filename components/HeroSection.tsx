@@ -84,13 +84,13 @@ const HeroSection = () => {
       {/* Hero Content - Centered with Padding */}
       <div className="relative z-0 flex flex-col items-center justify-center h-screen space-y-6 max-w-4xl mx-auto text-center pt-16">
         <h1
-          className={`text-9xl  font-poppins ${activeTextHoverGradientStyles}`}
+          className={`text-9xl font-poppins ${activeTextHoverGradientStyles}`}
         >
           We Build Web Apps
         </h1>
-        <h2 className="text-md">
+        <p className="text-md">
           We build web applications that help your business grow.
-        </h2>
+        </p>
         <div className="border bg-black border-gray-800 rounded-lg p-1 flex flex-row font-medium pointer-events-auto">
           <Link
             href="/contact"
