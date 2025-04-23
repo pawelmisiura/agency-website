@@ -29,26 +29,26 @@ const NavBar = () => {
       <div className="absolute inset-x-0 top-1/2 transform -translate-y-1/2 flex justify-center pointer-events-none">
         <div className="border bg-[#0f0f0f] border-gray-800 rounded-lg p-1 flex flex-row font-medium pointer-events-auto">
           <Link
-            href="/"
-            className={`${containerBaseStyles} ${containerHoverStyles} text-gray-400`}
+            href="#hero"
+            className={`${containerBaseStyles} ${containerHoverStyles} text-gray-400 cursor-pointer`}
           >
             <span className={textHoverGradientStyles}>home</span>
           </Link>
           <Link
-            href="/about"
-            className={`${containerBaseStyles} ${containerHoverStyles} text-gray-400`}
+            href="#projects"
+            className={`${containerBaseStyles} ${containerHoverStyles} text-gray-400 cursor-pointer`}
           >
             <span className={textHoverGradientStyles}>projects</span>
           </Link>
           <Link
-            href="/contact"
-            className={`${containerBaseStyles} ${containerHoverStyles} text-gray-400`}
+            href="#process"
+            className={`${containerBaseStyles} ${containerHoverStyles} text-gray-400 cursor-pointer`}
           >
             <span className={textHoverGradientStyles}>process</span>
           </Link>
           <Link
-            href="/contact"
-            className={`${containerBaseStyles} ${containerHoverStyles} text-gray-400`}
+            href="#contact"
+            className={`${containerBaseStyles} ${containerHoverStyles} text-gray-400 cursor-pointer`}
           >
             <span className={textHoverGradientStyles}>contact</span>
           </Link>
@@ -60,7 +60,7 @@ const NavBar = () => {
         className={`flex flex-row gap-4 relative overflow-hidden p-1 rounded-lg animated-border-base hover:border-[#83BBF4]/75 hover:shadow-[0_0_10px_#83BBF4] transition-all duration-300`}
       >
         <Link
-          href="/contact"
+          href="#contact"
           className={`${containerBaseStyles} text-gray-400 flex items-center gap-2`}
         >
           <span className={textHoverGradientStyles}>let's talk</span>

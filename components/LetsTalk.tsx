@@ -78,7 +78,10 @@ const LetsTalk = () => {
   const buttonStyles = `inline-flex justify-center py-2 px-6 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-60 disabled:cursor-not-allowed`;
 
   return (
-    <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 grid grid-cols-2 gap-8">
+    <div
+      id="contact"
+      className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 grid grid-cols-2 gap-8"
+    >
       <div className="flex flex-col items-center gap-4">
         <h2
           className={`text-8xl font-poppins ${activeTextHoverGradientStyles} mx-auto mb-12`}

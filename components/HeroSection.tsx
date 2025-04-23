@@ -22,7 +22,7 @@ const activeHoverStyles =
 const activeTextHoverGradientStyles =
   "bg-gradient-to-r from-white to-[#83BBF4] text-transparent bg-clip-text";
 
-const NUM_BLOBS = 2;
+const NUM_BLOBS = 4;
 
 // Removed generateInitialBlobStyle function
 
@@ -70,19 +70,19 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div className="hero-background relative min-h-screen">
+    <div id="hero" className="hero-background relative min-h-screen">
       {/* Render multiple blob elements */}
-      {/* {blobStyles.map((style, index) => (
+      {blobStyles.map((style, index) => (
         <div key={index} className="blob-element" style={style}></div>
-      ))} */}
+      ))}
 
       {/* Absolutely positioned NavBar */}
-      <div className="absolute top-0 left-0 right-0 z-10">
+      <div className="absolute top-0 left-0 right-0 z-10 pointer-events-auto">
         <NavBar />
       </div>
 
       {/* Hero Content - Centered with Padding */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-screen space-y-6 max-w-4xl mx-auto text-center pt-16">
+      <div className=" flex flex-col items-center justify-center h-screen space-y-6 max-w-4xl mx-auto text-center pt-16">
         <h1
           className={`text-9xl font-poppins ${activeTextHoverGradientStyles}`}
         >
@@ -93,13 +93,13 @@ const HeroSection = () => {
         </p>
         <div className="border bg-black border-gray-800 rounded-lg p-1 flex flex-row font-medium pointer-events-auto">
           <Link
-            href="/contact"
+            href="#projects"
             className={`${containerBaseStyles} ${containerHoverStyles} text-gray-400`}
           >
             <span className={textHoverGradientStyles}>our work</span>
           </Link>
           <Link
-            href="/contact"
+            href="#contact"
             className={`${containerBaseStyles} ${activeHoverStyles} text-gray-400 flex items-center gap-2`}
           >
             <span className={activeTextHoverGradientStyles}>let's talk</span>

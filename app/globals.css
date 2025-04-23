@@ -143,3 +143,8 @@ body {
   inset: var(--offset);
   z-index: -1;
 }
+
+/* Add smooth scrolling behavior */
+html {
+  scroll-behavior: smooth;
+}

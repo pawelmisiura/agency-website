@@ -6,7 +6,10 @@ const activeTextHoverGradientStyles =
 
 const Projects = () => {
   return (
-    <div className="space-y-16 py-16 max-w-7xl mx-auto overflow-x-hidden p-3">
+    <div
+      id="projects"
+      className="space-y-16 py-16 max-w-7xl mx-auto overflow-x-hidden p-3"
+    >
       <h2 className={`text-8xl font-poppins ${activeTextHoverGradientStyles}`}>
         Success Stories
       </h2>
