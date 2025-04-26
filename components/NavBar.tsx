@@ -63,7 +63,7 @@ const NavBar = () => {
           href="#contact"
           className={`${containerBaseStyles} text-gray-400 flex items-center gap-2`}
         >
-          <span className={textHoverGradientStyles}>let's talk</span>
+          <span className={textHoverGradientStyles}>let&apos;s talk</span>
           <div className="flex items-center gap-1.5">
             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
           </div>

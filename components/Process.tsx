@@ -1,5 +1,5 @@
 import React from "react";
-import CustomCard from "./ui/CustomCard";
+// import CustomCard from "./ui/CustomCard";
 import ProcessCard from "./ui/ProcessCard";
 
 const activeTextHoverGradientStyles =
@@ -14,15 +14,20 @@ const Process = () => {
       <h2 className={`text-8xl font-poppins ${activeTextHoverGradientStyles}`}>
         Our Process
       </h2>
-      <div className="grid grid-cols-3 gap-8">
+      <div className="grid grid-cols-4 gap-8">
         <ProcessCard
           step="01"
-          title="Strategy Blueprint"
+          title="Discovery & Planning"
           description="We build web applications that help your business grow."
         />
         <ProcessCard
           step="02"
           title="Design & Development"
+          description="We build web applications that help your business grow."
+        />
+        <ProcessCard
+          step="03"
+          title="Testing & Deployment"
           description="We build web applications that help your business grow."
         />
         <ProcessCard

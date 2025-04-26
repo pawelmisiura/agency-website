@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   containerBaseStyles,
   containerHoverStyles,
@@ -12,6 +12,18 @@ import {
 const activeTextHoverGradientStyles =
   "bg-gradient-to-r from-white to-[#83BBF4] text-transparent bg-clip-text w-fit";
 
+// Add type for grecaptcha window property
+declare global {
+  interface Window {
+    grecaptcha: {
+      execute: (
+        siteKey: string,
+        options: { action: string }
+      ) => Promise<string>;
+    };
+  }
+}
+
 const LetsTalk = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -20,7 +32,17 @@ const LetsTalk = () => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState("");
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: string;
+    message: string;
+  } | null>(null);
+
+  useEffect(() => {
+    // Load reCAPTCHA script
+    const script = document.createElement("script");
+    script.src = `https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`;
+    document.head.appendChild(script);
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -32,41 +54,45 @@ const LetsTalk = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setSubmitMessage("");
+    setSubmitStatus(null);
 
-    // --- Placeholder for Resend API Call ---
-    // This is where you would fetch your API route that uses Resend
-    /*
     try {
-      const response = await fetch('/api/send-email', { // Example API route path
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+      // Get reCAPTCHA token
+      const token = await window.grecaptcha.execute(
+        process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string,
+        { action: "submit" }
+      );
+
+      const response = await fetch("/api/contact-form", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...formData, recaptchaToken: token }),
       });
-      const result = await response.json();
-      if (response.ok) {
-        setSubmitMessage('Message sent successfully!');
-        setFormData({ name: '', phone: '', email: '', message: '' }); // Clear form
-      } else {
-        setSubmitMessage(result.error || 'Failed to send message. Please try again.');
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send message");
       }
+
+      setSubmitStatus({
+        type: "success",
+        message: "Message sent successfully! We'll get back to you soon.",
+      });
+      setFormData({ name: "", phone: "", email: "", message: "" });
     } catch (error) {
-      console.error('Submission error:', error);
-      setSubmitMessage('An error occurred while sending the message. Please try again.');
+      setSubmitStatus({
+        type: "error",
+        message:
+          error instanceof Error
+            ? error.message
+            : "Failed to send message. Please try again later.",
+      });
     } finally {
       setIsSubmitting(false);
     }
-    */
-    // --- End Placeholder ---
-
-    // For now, just log the data and simulate submission
-    console.log("Form Data (Simulated Submission):", formData);
-    await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate network delay
-    setSubmitMessage(
-      "Form submitted successfully (simulated). Check browser console for data."
-    );
-    setIsSubmitting(false);
-    setFormData({ name: "", phone: "", email: "", message: "" }); // Clear form after simulated submission
   };
 
   // Tailwind classes for styling
@@ -75,7 +101,6 @@ const LetsTalk = () => {
     "block w-full bg-[#0f0f0f] border border-gray-700 rounded-md shadow-sm placeholder-gray-500 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-white";
   const inputStyles = `${inputBaseStyles} px-3 py-2`;
   const textAreaStyles = `${inputBaseStyles} px-3 py-2 min-h-[120px]`;
-  const buttonStyles = `inline-flex justify-center py-2 px-6 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-60 disabled:cursor-not-allowed`;
 
   return (
     <div
@@ -86,7 +111,7 @@ const LetsTalk = () => {
         <h2
           className={`text-8xl font-poppins ${activeTextHoverGradientStyles} mx-auto mb-12`}
         >
-          Let's Talk!
+          Let&apos;s Talk!
         </h2>
         <div
           className={`flex flex-row gap-4 relative overflow-hidden p-1 rounded-lg animated-border-base hover:border-[#83BBF4]/75 hover:shadow-[0_0_10px_#83BBF4] transition-all duration-300 w-fit`}
@@ -178,22 +203,22 @@ const LetsTalk = () => {
               {isSubmitting ? "Sending..." : "Send Message"}
             </button>
           </div>
-          {submitMessage && (
+          {submitStatus && (
             <p
               className={`text-sm text-center mt-4 ${
-                submitMessage.includes("successfully")
+                submitStatus.type === "success"
                   ? "text-green-400"
                   : "text-red-400"
               }`}
             >
-              {submitMessage}
+              {submitStatus.message}
             </p>
           )}
         </form>
+        <p className="mt-6 text-xs text-gray-500 text-center">
+          Note: Email sending requires backend setup with Resend.
+        </p>
       </div>
-      <p className="mt-6 text-xs text-gray-500 text-center">
-        Note: Email sending requires backend setup with Resend.
-      </p>
     </div>
   );
 };
