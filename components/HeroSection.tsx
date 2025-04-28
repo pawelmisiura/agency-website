@@ -80,18 +80,20 @@ const HeroSection = () => {
       ))}
 
       {/* Absolutely positioned NavBar */}
-      <div className="absolute top-0 left-0 right-0 z-10 pointer-events-auto">
+      <div className="absolute top-0 left-0 right-0 z-10 pointer-events-auto px-4 md:px-0">
         <NavBar />
       </div>
 
       {/* Hero Content - Centered with Padding */}
-      <div className=" flex flex-col items-center justify-center h-screen space-y-6 max-w-4xl mx-auto text-center pt-16">
+      <div className="flex flex-col items-center justify-center h-screen space-y-4 md:space-y-6 max-w-4xl mx-auto text-center px-4 md:px-0 pt-16">
         <h1
-          className={`text-9xl font-poppins ${activeTextHoverGradientStyles}`}
+          className={`text-4xl sm:text-6xl md:text-7xl lg:text-9xl font-poppins ${activeTextHoverGradientStyles} leading-tight`}
         >
           Web Application Development
         </h1>
-        <p className="text-md">Helping businesses thrive in the digital age.</p>
+        <p className="text-md md:text-lg px-4">
+          Helping businesses thrive in the digital age.
+        </p>
         <div className="border bg-black border-gray-800 rounded-lg p-1 flex flex-row font-medium pointer-events-auto">
           <Link
             href="#projects"
@@ -112,6 +114,8 @@ const HeroSection = () => {
           <Link
             href="#contact"
             className={`${containerBaseStyles} ${activeButton === "talk" ? activeHoverStyles : containerHoverStyles} text-gray-400 flex items-center gap-2`}
+            onMouseEnter={() => setActiveButton("talk")}
+            onMouseLeave={() => setActiveButton("work")}
           >
             <span
               className={
