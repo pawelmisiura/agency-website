@@ -8,12 +8,14 @@ const Projects = () => {
   return (
     <div
       id="projects"
-      className="space-y-16 py-16 max-w-7xl mx-auto overflow-x-hidden p-3"
+      className="space-y-8 md:space-y-16 py-8 md:py-16 max-w-7xl mx-auto overflow-x-hidden px-4 sm:px-6 lg:px-8"
     >
-      <h2 className={`text-8xl font-poppins ${activeTextHoverGradientStyles}`}>
+      <h2
+        className={`text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-poppins ${activeTextHoverGradientStyles} mx-auto md:mx-0`}
+      >
         Our Projects
       </h2>
-      <div className="grid grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
         <ProjectCard
           image="/project-images/email-improver/image1.png"
           title="AI Email Improver"
