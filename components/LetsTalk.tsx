@@ -101,11 +101,12 @@ const LetsTalk = () => {
   return (
     <div
       id="contact"
-      className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 grid grid-cols-2 gap-8"
+      className="max-w-7xl mx-auto py-10 md:py-16 px-4 sm:px-6 lg:px-8"
     >
-      <div className="flex flex-col items-center gap-4">
+      {/* Section Title and Book a Call - Always at the top */}
+      <div className="flex flex-col items-center mb-10 md:mb-12">
         <h2
-          className={`text-8xl font-poppins ${activeTextHoverGradientStyles} mx-auto mb-12`}
+          className={`text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-poppins ${activeTextHoverGradientStyles} mb-6 text-center`}
         >
           Let&apos;s Talk!
         </h2>
@@ -123,97 +124,109 @@ const LetsTalk = () => {
           </Link>
         </div>
       </div>
-      <div>
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div>
-            <label htmlFor="name" className={labelStyles}>
-              Full Name
-            </label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              className={inputStyles}
-              placeholder="Your Name"
-              autoComplete="name"
-            />
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+      {/* Contact Form Section - Two columns on desktop */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="hidden md:flex flex-col items-start justify-center">
+          <p className="text-lg text-gray-300 mb-6">
+            Have a project in mind? We&apos;d love to help you bring your ideas
+            to life.
+          </p>
+          <p className="text-md text-gray-400">
+            Fill out the form and we&apos;ll get back to you as soon as
+            possible.
+          </p>
+        </div>
+
+        <div>
+          <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
             <div>
-              <label htmlFor="phone" className={labelStyles}>
-                Phone Number{" "}
-                <span className="text-xs text-gray-500">(Optional)</span>
+              <label htmlFor="name" className={labelStyles}>
+                Full Name
               </label>
               <input
-                type="tel"
-                name="phone"
-                id="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                className={inputStyles}
-                placeholder="(123) 456-7890"
-                autoComplete="tel"
-              />
-            </div>
-            <div>
-              <label htmlFor="email" className={labelStyles}>
-                Email Address
-              </label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                value={formData.email}
+                type="text"
+                name="name"
+                id="name"
+                value={formData.name}
                 onChange={handleChange}
                 required
                 className={inputStyles}
-                placeholder="your.email@example.com"
-                autoComplete="email"
+                placeholder="Your Name"
+                autoComplete="name"
               />
             </div>
-          </div>
-          <div>
-            <label htmlFor="message" className={labelStyles}>
-              Message
-            </label>
-            <textarea
-              name="message"
-              id="message"
-              rows={5}
-              value={formData.message}
-              onChange={handleChange}
-              required
-              className={textAreaStyles}
-              placeholder="Tell us about your project or inquiry..."
-            />
-          </div>
-          <div className="flex justify-end">
-            <button
-              type="submit"
-              className={`cursor-pointer text-sm px-4 py-2 rounded-lg border border-gray-700 transition-all duration-300 group ${containerHoverStyles} text-gray-400`}
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? "Sending..." : "Send Message"}
-            </button>
-          </div>
-          {submitStatus && (
-            <p
-              className={`text-sm text-center mt-4 ${
-                submitStatus.type === "success"
-                  ? "text-green-400"
-                  : "text-red-400"
-              }`}
-            >
-              {submitStatus.message}
-            </p>
-          )}
-        </form>
-        <p className="mt-6 text-xs text-gray-500 text-center">
-          Note: Email sending requires backend setup with Resend.
-        </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+              <div>
+                <label htmlFor="phone" className={labelStyles}>
+                  Phone Number{" "}
+                  <span className="text-xs text-gray-500">(Optional)</span>
+                </label>
+                <input
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className={inputStyles}
+                  placeholder="(123) 456-7890"
+                  autoComplete="tel"
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className={labelStyles}>
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className={inputStyles}
+                  placeholder="your.email@example.com"
+                  autoComplete="email"
+                />
+              </div>
+            </div>
+            <div>
+              <label htmlFor="message" className={labelStyles}>
+                Message
+              </label>
+              <textarea
+                name="message"
+                id="message"
+                rows={5}
+                value={formData.message}
+                onChange={handleChange}
+                required
+                className={textAreaStyles}
+                placeholder="Tell us about your project or inquiry..."
+              />
+            </div>
+            <div className="flex justify-center md:justify-end">
+              <button
+                type="submit"
+                className={`cursor-pointer text-sm px-4 py-2 rounded-lg border border-gray-700 transition-all duration-300 group ${containerHoverStyles} text-gray-400`}
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
+              </button>
+            </div>
+            {submitStatus && (
+              <p
+                className={`text-sm text-center mt-4 ${
+                  submitStatus.type === "success"
+                    ? "text-green-400"
+                    : "text-red-400"
+                }`}
+              >
+                {submitStatus.message}
+              </p>
+            )}
+          </form>
+        </div>
       </div>
     </div>
   );
