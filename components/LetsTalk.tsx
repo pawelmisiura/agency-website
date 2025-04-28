@@ -2,11 +2,7 @@
 
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import {
-  containerBaseStyles,
-  containerHoverStyles,
-  textHoverGradientStyles,
-} from "./NavBar";
+import { containerBaseStyles, containerHoverStyles } from "./NavBar";
 
 // Style for the restored heading
 const activeTextHoverGradientStyles =
@@ -120,7 +116,7 @@ const LetsTalk = () => {
             href="https://cal.com/pawel-misiura-iminyz"
             className={`${containerBaseStyles} text-gray-400 flex items-center gap-2`}
           >
-            <span className={textHoverGradientStyles}>Book a Call</span>
+            <span className={activeTextHoverGradientStyles}>Book a Call</span>
             <div className="flex items-center gap-1.5">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
             </div>

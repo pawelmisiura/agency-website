@@ -65,23 +65,6 @@ body {
 
 /* New Blob Animation Styles */
 
-.hero-background {
-  position: relative; /* Needed for absolute positioning of the pseudo-element */
-  overflow: hidden; /* Prevent blob from overflowing */
-  min-height: 100vh; /* Ensure it covers the viewport height */
-  z-index: 0; /* Ensure content is above the blob */
-}
-
-/* Add fade-to-black overlay at the bottom */
-.hero-background::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, transparent 70%, #0a0a0a 100%);
-  z-index: 0; /* Place it above blobs (-1), below content (1) */
-  pointer-events: none; /* Allow interaction with content below */
-}
-
 /* Styles for the JS-controlled blob */
 .blob-element {
   content: "";
@@ -93,8 +76,11 @@ body {
   opacity: 0.75; /* Adjusted opacity for blend mode */
   z-index: -1;
   /* Smooth transitions for position, size, and shape changes */
-  transition: top 15s ease-in-out, left 15s ease-in-out,
-    transform 15s ease-in-out, border-radius 15s ease-in-out; /* Added border-radius transition */
+  transition:
+    top 15s ease-in-out,
+    left 15s ease-in-out,
+    transform 15s ease-in-out,
+    border-radius 15s ease-in-out; /* Added border-radius transition */
   /* Added border-radius to will-change */
   will-change: top, left, transform, border-radius;
 }

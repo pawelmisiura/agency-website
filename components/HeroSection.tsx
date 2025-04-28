@@ -1,11 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import NavBar, {
-  containerBaseStyles,
-  containerHoverStyles,
-  textHoverGradientStyles,
-} from "./NavBar";
+import NavBar from "./NavBar";
 import Link from "next/link";
 
 // Helper function to generate random border-radius
@@ -22,6 +18,12 @@ const activeHoverStyles =
 const activeTextHoverGradientStyles =
   "bg-gradient-to-r from-white to-[#83BBF4] text-transparent bg-clip-text";
 
+const containerBaseStyles =
+  "text-sm px-4 py-2 rounded-lg border border-transparent transition-all duration-300 group";
+
+const containerHoverStyles =
+  "hover:border-[#83BBF4]/75 hover:shadow-[0_0_10px_#83BBF4]";
+
 const NUM_BLOBS = 4;
 
 // Removed generateInitialBlobStyle function
@@ -29,6 +31,7 @@ const NUM_BLOBS = 4;
 const HeroSection = () => {
   // Initialize state with an empty array to avoid hydration mismatch
   const [blobStyles, setBlobStyles] = useState<React.CSSProperties[]>([]);
+  const [activeButton, setActiveButton] = useState<"work" | "talk">("talk");
 
   useEffect(() => {
     // Generate initial styles only on the client after mount
@@ -70,7 +73,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div id="hero" className="hero-background relative min-h-screen">
+    <div id="hero" className="relative min-h-screen">
       {/* Render multiple blob elements */}
       {blobStyles.map((style, index) => (
         <div key={index} className="blob-element" style={style}></div>
@@ -92,15 +95,31 @@ const HeroSection = () => {
         <div className="border bg-black border-gray-800 rounded-lg p-1 flex flex-row font-medium pointer-events-auto">
           <Link
             href="#projects"
-            className={`${containerBaseStyles} ${containerHoverStyles} text-gray-400`}
+            className={`${containerBaseStyles} ${activeButton === "work" ? activeHoverStyles : containerHoverStyles}`}
+            onMouseEnter={() => setActiveButton("work")}
+            onMouseLeave={() => setActiveButton("talk")}
           >
-            <span className={textHoverGradientStyles}>our work</span>
+            <span
+              className={
+                activeButton === "work"
+                  ? activeTextHoverGradientStyles
+                  : "text-white"
+              }
+            >
+              our work
+            </span>
           </Link>
           <Link
             href="#contact"
-            className={`${containerBaseStyles} ${activeHoverStyles} text-gray-400 flex items-center gap-2`}
+            className={`${containerBaseStyles} ${activeButton === "talk" ? activeHoverStyles : containerHoverStyles} text-gray-400 flex items-center gap-2`}
           >
-            <span className={activeTextHoverGradientStyles}>
+            <span
+              className={
+                activeButton === "talk"
+                  ? activeTextHoverGradientStyles
+                  : "text-gray-400"
+              }
+            >
               let&apos;s talk
             </span>
             <div className="flex items-center gap-1.5">

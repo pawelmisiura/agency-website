@@ -10,6 +10,10 @@ export const containerHoverStyles =
 export const textHoverGradientStyles =
   "group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-[#83BBF4] group-hover:text-transparent group-hover:bg-clip-text";
 
+// Styles for the inner text span gradient on hover
+export const xxtextHoverGradientStyles =
+  "bg-gradient-to-r from-white to-[#83BBF4] text-transparent bg-clip-text";
+
 const NavBar = () => {
   // Styles for the container (Link/button)
 
@@ -63,7 +67,7 @@ const NavBar = () => {
           href="#contact"
           className={`${containerBaseStyles} text-gray-400 flex items-center gap-2`}
         >
-          <span className={textHoverGradientStyles}>let&apos;s talk</span>
+          <span className={xxtextHoverGradientStyles}>let&apos;s talk</span>
           <div className="flex items-center gap-1.5">
             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
           </div>
