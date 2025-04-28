@@ -19,7 +19,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Black Pearl Studios",
+  title: "Black Pearl Labs",
   description: "Software Development Agency",
 };
 

@@ -11,7 +11,7 @@ const Projects = () => {
       className="space-y-16 py-16 max-w-7xl mx-auto overflow-x-hidden p-3"
     >
       <h2 className={`text-8xl font-poppins ${activeTextHoverGradientStyles}`}>
-        Success Stories
+        Our Projects
       </h2>
       <div className="grid grid-cols-2 gap-8">
         <ProjectCard
@@ -28,13 +28,13 @@ const Projects = () => {
           tags={["React Native", "Expo", "Tailwind CSS", "OpenAI"]}
           description="A calorie counter that uses AI to help you count your calories with natural language. This app is built using React Native and Expo."
         />
-        <ProjectCard
+        {/* <ProjectCard
           image=""
           title="The Hanimator Website"
           subtitle="A website for a video editor/animator"
           tags={["React", "Next.js", "Tailwind CSS"]}
           description="A website for a video editor/animator. This website is built using React and Next.js."
-        />
+        /> */}
       </div>
     </div>
   );

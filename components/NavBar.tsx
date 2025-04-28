@@ -40,12 +40,12 @@ const NavBar = () => {
           >
             <span className={textHoverGradientStyles}>projects</span>
           </Link>
-          <Link
+          {/* <Link
             href="#process"
             className={`${containerBaseStyles} ${containerHoverStyles} text-gray-400 cursor-pointer`}
           >
             <span className={textHoverGradientStyles}>process</span>
-          </Link>
+          </Link> */}
           <Link
             href="#contact"
             className={`${containerBaseStyles} ${containerHoverStyles} text-gray-400 cursor-pointer`}

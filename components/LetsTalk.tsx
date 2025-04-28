@@ -117,7 +117,7 @@ const LetsTalk = () => {
           className={`flex flex-row gap-4 relative overflow-hidden p-1 rounded-lg animated-border-base hover:border-[#83BBF4]/75 hover:shadow-[0_0_10px_#83BBF4] transition-all duration-300 w-fit`}
         >
           <Link
-            href="/contact"
+            href="https://cal.com/pawel-misiura-iminyz"
             className={`${containerBaseStyles} text-gray-400 flex items-center gap-2`}
           >
             <span className={textHoverGradientStyles}>Book a Call</span>

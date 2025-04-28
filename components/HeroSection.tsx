@@ -86,11 +86,9 @@ const HeroSection = () => {
         <h1
           className={`text-9xl font-poppins ${activeTextHoverGradientStyles}`}
         >
-          We Build Web Apps
+          Web Application Development
         </h1>
-        <p className="text-md">
-          We build web applications that help your business grow.
-        </p>
+        <p className="text-md">Helping businesses thrive in the digital age.</p>
         <div className="border bg-black border-gray-800 rounded-lg p-1 flex flex-row font-medium pointer-events-auto">
           <Link
             href="#projects"
