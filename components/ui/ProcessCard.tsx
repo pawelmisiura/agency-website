@@ -24,7 +24,7 @@ const CustomCard = ({
           </p>
           <p className="text-4xl font-poppins">{title}</p>
         </div>
-        <p className="text-sm text-gray-400">{description}</p>
+        <p className="text-md text-gray-400">{description}</p>
       </div>
     </div>
   );

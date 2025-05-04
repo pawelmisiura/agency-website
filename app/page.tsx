@@ -1,6 +1,7 @@
 import HeroSection from "@/components/HeroSection";
 // import Services from "@/components/Services";
 import Projects from "@/components/Projects";
+import Process from "@/components/Process";
 // import Process from "@/components/Process";
 import LetsTalk from "@/components/LetsTalk";
 import Footer from "@/components/Footer";
@@ -11,7 +12,7 @@ export default function Home() {
       <HeroSection />
       {/* <Services /> */}
       <Projects />
-      {/* <Process /> */}
+      <Process />
       <LetsTalk />
       <Footer />
     </div>

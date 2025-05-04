@@ -74,11 +74,6 @@ const HeroSection = () => {
 
   return (
     <div id="hero" className="relative min-h-screen">
-      {/* Render multiple blob elements */}
-      {blobStyles.map((style, index) => (
-        <div key={index} className="blob-element" style={style}></div>
-      ))}
-
       {/* Absolutely positioned NavBar */}
       <div className="absolute top-0 left-0 right-0 z-10 pointer-events-auto px-4 md:px-0">
         <NavBar />
@@ -89,10 +84,11 @@ const HeroSection = () => {
         <h1
           className={`text-4xl sm:text-6xl md:text-7xl lg:text-9xl font-poppins ${activeTextHoverGradientStyles} leading-tight`}
         >
-          Web Application Development
+          We Build Web Apps
         </h1>
         <p className="text-md md:text-lg px-4">
-          Helping businesses thrive in the digital age.
+          From ideas to deployment. We will deliver an MVP in as little as 3
+          weeks.
         </p>
         <div className="border bg-black border-gray-800 rounded-lg p-1 flex flex-row font-medium pointer-events-auto">
           <Link

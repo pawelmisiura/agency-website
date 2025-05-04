@@ -63,28 +63,6 @@ body {
   }
 }
 
-/* New Blob Animation Styles */
-
-/* Styles for the JS-controlled blob */
-.blob-element {
-  content: "";
-  position: absolute;
-  width: 25vw; /* Further decreased size */
-  height: 25vw; /* Further decreased size */
-  background-color: #83bdf5;
-  filter: blur(50px); /* Adjusted blur */
-  opacity: 0.75; /* Adjusted opacity for blend mode */
-  z-index: -1;
-  /* Smooth transitions for position, size, and shape changes */
-  transition:
-    top 15s ease-in-out,
-    left 15s ease-in-out,
-    transform 15s ease-in-out,
-    border-radius 15s ease-in-out; /* Added border-radius transition */
-  /* Added border-radius to will-change */
-  will-change: top, left, transform, border-radius;
-}
-
 .card-border-base {
   --offset: 1px;
   border-radius: 0.5rem;
