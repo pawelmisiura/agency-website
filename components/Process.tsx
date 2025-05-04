@@ -9,12 +9,14 @@ const Process = () => {
   return (
     <div
       id="process"
-      className="space-y-16 py-16 max-w-7xl mx-auto overflow-x-hidden p-3"
+      className="space-y-8 md:space-y-16 py-8 md:py-16 max-w-7xl mx-auto overflow-x-hidden p-3"
     >
-      <h2 className={`text-8xl font-poppins ${activeTextHoverGradientStyles}`}>
+      <h2
+        className={`text-4xl md:text-6xl lg:text-8xl font-poppins ${activeTextHoverGradientStyles}`}
+      >
         Our Process
       </h2>
-      <div className="grid grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
         <ProcessCard
           step="01"
           title="Initial Call"
@@ -31,7 +33,7 @@ const Process = () => {
           description="We will build your project in sprints. We will keep you updated every step of the way."
         />
       </div>
-      <div className="grid grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
         <ProcessCard
           step="04"
           title="Testing"
